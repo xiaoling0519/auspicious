@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<script src="layui/layui.all.js"></script>
+		<link rel="stylesheet" href="layui/css/layui.css">
+		<link rel="stylesheet" href="css/public.css">
+		<title></title>
+	</head>
+	<body>
+		<div class="content">
+			<div class="top-head flex">
+				<img class="top-img" src="img/img01.png" />
+				<div class="flex top-nav">
+					<div class="nav-name this-item">首页</div>
+					<div class="nav-name"><a href="elephant.html">吉象多多</a></div>
+					<div class="nav-name"><a href="app.html">App下载</a></div>
+					<div class="nav-name"><a href="cooperation.html">商务合作</a></div>
+				</div>
+			</div>
+			<div class="layui-carousel" id="carou">
+				<div carousel-item="">
+					<div><img class="image" src="img/img19.png"></div>
+				</div>
+			</div>
+			<div class="addr-tpl">
+				<div class="addr-city">公司成立</div>
+				<div class="text-box">
+					北京新起点盛和教育科技有限公司于2012年4月成立，总部设立在北京，
+					专注于亲子教育、亲子产品开发、家庭活动、会议定制旅游及亲子产品APP平台技术的研究和开发的专业性科技公司，设有技术开发部、客户服务部、市场营销部、运营部、财务部。
+				</div>
+			</div>
+			<div class="addr-tpl">
+				<div class="addr-city">发展历程</div>
+				<div class="text-box">
+					2012年，公司正式成立，同年7月发行首套《北京市中小学生社会大课堂活动年票》，服务于北京市130万中小学生。</br>2013年，与中国移动12580达成合作共识,成为其旅游类产品唯一供应商。联合发行《精彩上海旅游联票》（发行总量15万张）、《难忘安徽旅游年票》
+（发行总量20万张），成为城市年度最受欢迎得旅游类产品。</br></br>2014年，与北京一卡通有限公司达成合作共识。联合发行《北京寺庙祈福门票》。门票的发行受到广大市民的热捧，成为年度祈福、许愿、
+祝福的必备宝典。</br></br>2015年11月，关工委、文明办、全国妇联等9部委共同印发《关于指导推进家庭教育的五年规划（2016-2020年）》，
+关工委成立全国亲子年票发行办公室，亲子年票成为落实5年规划落地主要产品之一。11月18日，由中国关心下一代工作委员会事业发展中心主办， 
+首套北京亲子年票正式发行，并开通官方微信公众号、 官方网站、 官方热线。 发行总量20万张，被市民誉为“遛娃神器”。</br></br>2016年5月，在武汉成立首个分公司，并于5月25日上午10:00在武汉市光谷德国风情街柏林广场召开亲子年票新闻发布会，
+《武汉亲子年票》成为武汉市教委年度亲子娱教重点推荐产品。6月23日自主开发的“亲子年票”APP正式上线，这也是全国首个电子验证类综合APP端。</br></br>2017-2018年，陆续在上海、深圳、广州、佛山、厦门、福州、泉州、苏州、南京、长沙武汉、郑州、成都、重庆、西安、
+河北、天津、青岛、长春、新疆成立分公司。2017年年底， 公司正式加入北京学前教育协会，任副会长单位。2018年5月22日，
+由国家航天局探月与航天工程中心主办，一起走进中国.西昌卫星发射中心，探索亲子营地建设。</br></br>2019年5月，实施亲子营地建设常规化，组建智慧科技馆， 年度接待量达到20万人次，收到中科院高度评价。6月19日主办乌克
+兰国立茹科夫斯基航空航天大学-中国智造科技人才培养计划。 全国范围内，筛选海外留学生培养科技人才。8月12日出版 
+《亲子关系辅导》 系列教材， 开展亲子乐园亲子关系构建师培训工作。</br></br>
+				</div>
+			</div>
+			<div class="addr-tpl">
+				<div class="addr-city">主要成就</div>
+				<div class="text-box">
+				受中国关心下一代工作委员事业发展中心委托，自2015年开始发行《亲子年票》
+				，已在北京、天津、上海、广州、深圳、武汉、长沙、西安、成都、南京、太原、福州、
+				泉州、重庆、新疆、长春等各地发行，签约场馆和景区2000家，年发行总量超过150万张，
+				2018年引导出行人次3000万人次，是目前国内最大的亲子类活动平台，有效解决家长目的地选择
+				、家庭出行成本、孩子广泛获取社会知识、场馆有效获客等问题。受邀成为北京学前教育协会 副会长单位，
+				中国关工委家庭教育服务提供机构。与中科院计算机所合作开发，自主经营的研学基地“智慧科技馆”。
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="./js/jquery.js"></script>
+		<script>
+			//一般直接写在一个js文件中
+			layui.use(['carousel'], function() {
+				var carousel = layui.carousel,
+					form = layui.form;
+				//图片轮播
+				carousel.render({
+					elem: '#carou',
+					width: '100%',
+					height: '500px',
+					interval: 5000
+				});
+				$(".addr").click(function() {
+					$('.this-addr').remove();
+					$(this).append('<div class="this-addr"></div>')
+				});
+			});
+		</script>
+	</body>
+</html>
+<style scoped="scoped">
+	.content {
+		width: 100%;
+		min-width: 1200px;
+		background-color: #FFFFFF;
+		font-size: 18px;
+	}
+
+	.image {
+		width: 100%;
+		height: 100%;
+	}
+
+	.top-head {
+		padding: 18px 15%;
+	}
+
+	.top-img {
+		width: 180px;
+		height: 50px;
+	}
+
+	.nav-name {
+		padding: 5px 30px;
+	}
+
+	.this-item {
+		border: 1px solid #FFD900;
+		border-radius: 20px;
+		color: #FFD900;
+	}
+	.addr-img {
+		width: 50px;
+		height: 52px;
+		margin-right: 10px;
+	}
+    .addr-img1{
+		width: 55px;
+		height: 45px;
+		margin-right: 10px;
+		
+	}
+	.text {
+		font-size: 18px !important;
+	}
+
+	.addr-tpl {
+		width: 57%;
+		margin: auto;
+		margin-bottom: 200px;
+		margin-top: 150px;
+		text-align: center;
+	}
+    .addr-city{
+		text-align: left;
+	}
+	.addr-name {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 20px 0px;
+	}
+
+	.addr {
+		padding: 30px 0px;
+		position: relative;
+		width: 105px;
+		text-align: center;
+	}
+
+	.this-addr {
+		position: absolute;
+		text-align: center;
+		height: 2px;
+		width: 30px;
+		left: 35%;
+		bottom: 20px;
+		display: block;
+		background-color: #FFD900;
+	}
+
+	.addr-text {
+		text-align: left;
+		font-size: 15px;
+		line-height: 30px;
+		width: 75%;
+		color: #666464;
+	}
+
+	.code {
+		width: 150px;
+		height: 150px;
+	}
+
+	.text-box {
+		text-align: left;
+		font-size: 14px;
+		line-height: 30px;
+		padding: 50px 0px;
+		color: #666464;
+	}
+	.text-text{
+		text-align: left;
+		font-size: 15px;
+		line-height: 30px;
+		color: #666464;
+		padding-left: 70px;
+	}
+	.text-text1{
+		text-align: left;
+		font-size: 15px;
+		line-height: 30px;
+		padding-top: 50px;
+		color: #666464;
+		padding-left: 70px;
+	}
+</style>

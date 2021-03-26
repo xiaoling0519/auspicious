@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<script src="layui/layui.all.js"></script>
+		<link rel="stylesheet" href="layui/css/layui.css">
+		<link rel="stylesheet" href="css/public.css">
+		<title></title>
+	</head>
+	<body>
+		<div class="content">
+			<div class="top-head flex">
+				<img class="top-img" src="img/img01.png" />
+				<div class="flex top-nav">
+					<div class="nav-name this-item">首页</div>
+					<div class="nav-name"><a href="elephant.html">吉象多多</a></div>
+					<div class="nav-name"><a href="app.html">App下载</a></div>
+					<div class="nav-name"><a href="cooperation.html">商务合作</a></div>
+				</div>
+			</div>
+			<div class="layui-carousel" id="carou">
+			  <div carousel-item="">
+			    <div><img class="image" src="img/img02.png"></div>
+			    <div><img class="image" src="img/img20.png"></div>
+			    <div><img class="image" src="img/img22.png"></div>
+			  </div>
+			</div>
+			<div class="item-tpl">
+				<div class="flex tpl-list">
+					<!-- <a href="about.html">
+						<div class="tpl">
+							<img class="tpl-img1" src="img/img03.png"/>
+							<div class="tpl-name">关于我们</div>
+						</div>
+					</a> -->
+					<div class="tpl" data-text="盛和人的使命：让每个家庭更快乐；</br>盛和人的价值观：人的努力是无限的；潜力亦是无限的；</br>盛和人的意愿：倡导亲子游览，促进家庭和谐</br>">
+						<img class="tpl-img" data-img='img/img03.png' data-tp='img/img24.png' src="img/img24.png"/>
+					</div>
+					<div class="tpl" data-text="让每个家庭更快乐；</br>人的努力是无限的；潜力亦是无限的；</br>倡导亲子游览，促进家庭和谐</br>">
+						<img class="tpl-img" data-img='img/img04.png' data-tp='img/img25.png' src="img/img25.png"/>
+					</div>
+					<div class="tpl" data-text="盛和人的使命</br>盛和人的价值观</br>盛和人的意愿</br>">
+						<img class="tpl-img" data-img='img/img05.png'  data-tp='img/img26.png' src="img/img26.png"/>
+					</div>
+					<div class="tpl" data-text="盛和人的价值观：人的努力是无限">
+						<img class="tpl-img" data-img='img/img06.png' data-tp='img/img27.png' src="img/img27.png"/>
+					</div>
+				</div>
+				<div class="text-name">
+					盛和人的使命：让每个家庭更快乐；</br>
+					盛和人的价值观：人的努力是无限的；潜力亦是无限的；</br>
+					盛和人的意愿：倡导亲子游览，促进家庭和谐</br>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="./js/jquery.js"></script>
+		<script>
+			//一般直接写在一个js文件中
+			layui.use(['carousel'], function() {
+				 var carousel = layui.carousel
+				  ,form = layui.form;
+				  //图片轮播
+				  carousel.render({
+				    elem: '#carou'
+				    ,width: '100%'
+				    ,height: '500px'
+				    ,interval: 5000
+				  });
+				 $(".tpl").click(function(){
+					var addr = $(this).attr('data-text');
+					 $(".text-name").html(addr);
+					 var img =  $(this).find('.tpl-img').attr('data-img');
+					 var img1 =  $(this).find('.tpl-img').attr('data-tp');
+					   $(".tpl-img").each(function(){
+						   var img1 =  $(this).attr('data-tp');
+							$(this).attr('src',img1);
+					   });
+					   $(this).find('.tpl-img').attr('src',img);
+					  
+				 });
+			});
+		</script>
+	</body>
+</html>
+<style scoped="scoped">
+.content{
+	width: 100%;
+	min-width: 1200px;
+	height: 1800px;
+	background-color: #FFFFFF;
+	font-size: 18px;
+}
+.image{
+	 width: 100%;
+	 height: 100%;
+ }
+.top-head{
+	padding: 18px 15%;
+}
+.top-img{
+	width: 180px;
+	height: 50px;
+}
+.top-nav{
+	
+}
+.nav-name{
+	padding: 5px 30px;
+}
+.this-item{
+	border: 1px solid #FFD900;
+	border-radius: 20px;
+	color: #FFD900;
+}
+ .item-tpl{
+	 background-color: #FFD900;
+	 height: 600px;
+ }
+ .tpl-list{
+	 padding: 80px 22%;
+ }
+ .text-name{
+	 text-align: center;
+	 line-height: 35px;
+ }
+ .tpl{
+	width: 120px;
+	height: 120px;
+	
+	}
+	.tpl-img{
+		width: 120px;
+		height: 120px;
+	}
+</style>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<script src="layui/layui.all.js"></script>
+		<link rel="stylesheet" href="layui/css/layui.css">
+		<link rel="stylesheet" href="css/public.css">
+		<title></title>
+	</head>
+	<body>
+		<div class="content">
+			<div class="top-head flex">
+				<img class="top-img" src="img/img01.png" />
+				<div class="flex top-nav">
+					<div class="nav-name"><a href="index.html">首页</a></div>
+					<div class="nav-name"><a href="elephant.html">吉象多多</a></div>
+					<div class="nav-name"><a href="app.html">App下载</a></div>
+					<div class="nav-name this-item">商务合作</div>
+				</div>
+			</div>
+			<div class="layui-carousel" id="carou">
+				<div carousel-item="">
+					<div><img class="image" src="img/img20.png"></div>
+				</div>
+			</div>
+			<div class="addr-tpl">
+				<div class="flex_item top-addr">
+					<img class="addr-img1" src="img/img10.png" />
+					<div class="addr-city">盛和团队</div>
+				</div>
+				<div class="text-box">
+					盛和技术研发团队，秉承“客户优先”的服务意识，依靠强大的专业知识和高默契的团队合作，将自身发展定位于为社会和市民提供优质的出行体验，让顾客满意是我们企业经营所追求的目标。我们希望与广大用户进行真诚、广泛的交流与合作，为我国亲子出行更智能化贡献自己的力量。
+				</div>
+			</div>
+			<div class="addr-tpl">
+				<div class="flex_item top-addr">
+					<img class="addr-img" src="img/img09.png" />
+					<div class="addr-city">合作说明</div>
+				</div>
+				<div class="text-box">
+					盛和技术研发团队，秉承“客户优先”的服务意识，依靠强大的专业知识和高默契的团队合作，将自身发展定位于为社会和市民提供优质的出行体验，让顾客满意是我们企业经营所追求的目标。我们希望与广大用户进行真诚、广泛的交流与合作，为我国亲子出行更智能化贡献自己的力量。
+				</div>
+			</div>
+			<div class="addr-tpl">
+				<div class="flex_item top-addr">
+					<img class="addr-img" src="img/img09.png" />
+					<div class="addr-city">商务热线</div>
+				</div>
+				<div class="text-text1 flex">
+					<div>商家加盟（何）： 13911357070 </div>
+					<div>商家加盟（何）： 13911357070 </div>
+					<div>商家加盟（何）： 13911357070 </div>
+				</div>
+				<div class="text-text flex">
+					<div>商家加盟（何）： 13911357070 </div>
+					<div>商家加盟（何）： 13911357070 </div>
+					<div>商家加盟（何）： 13911357070 </div>
+				</div>
+				<div class="text-text flex">
+					<div>商家加盟（何）： 13911357070 </div>
+					<div>商家加盟（何）： 13911357070 </div>
+					<div>商家加盟（何）： 13911357070 </div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="./js/jquery.js"></script>
+		<script>
+			//一般直接写在一个js文件中
+			layui.use(['carousel'], function() {
+				var carousel = layui.carousel,
+					form = layui.form;
+				//图片轮播
+				carousel.render({
+					elem: '#carou',
+					width: '100%',
+					height: '500px',
+					interval: 5000
+				});
+				$(".addr").click(function() {
+					$('.this-addr').remove();
+					$(this).append('<div class="this-addr"></div>')
+				});
+			});
+		</script>
+	</body>
+</html>
+<style scoped="scoped">
+	.content {
+		width: 100%;
+		min-width: 1200px;
+		background-color: #FFFFFF;
+		font-size: 18px;
+	}
+
+	.image {
+		width: 100%;
+		height: 100%;
+	}
+
+	.top-head {
+		padding: 18px 15%;
+	}
+
+	.top-img {
+		width: 180px;
+		height: 50px;
+	}
+
+	.nav-name {
+		padding: 5px 30px;
+	}
+
+	.this-item {
+		border: 1px solid #FFD900;
+		border-radius: 20px;
+		color: #FFD900;
+	}
+	.addr-img {
+		width: 50px;
+		height: 52px;
+		margin-right: 10px;
+	}
+    .addr-img1{
+		width: 55px;
+		height: 45px;
+		margin-right: 10px;
+		
+	}
+	.text {
+		font-size: 18px !important;
+	}
+
+	.addr-tpl {
+		width: 57%;
+		margin: auto;
+		margin-bottom: 200px;
+		margin-top: 150px;
+		text-align: center;
+	}
+
+	.addr-name {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 20px 0px;
+	}
+
+	.addr {
+		padding: 30px 0px;
+		position: relative;
+		width: 105px;
+		text-align: center;
+	}
+
+	.this-addr {
+		position: absolute;
+		text-align: center;
+		height: 2px;
+		width: 30px;
+		left: 35%;
+		bottom: 20px;
+		display: block;
+		background-color: #FFD900;
+	}
+
+	.addr-text {
+		text-align: left;
+		font-size: 15px;
+		line-height: 30px;
+		width: 75%;
+		color: #666464;
+	}
+
+	.code {
+		width: 150px;
+		height: 150px;
+	}
+
+	.text-box {
+		text-align: left;
+		font-size: 15px;
+		line-height: 30px;
+		padding: 50px 0px;
+		color: #666464;
+		padding-left: 70px;
+	}
+	.text-text{
+		text-align: left;
+		font-size: 15px;
+		line-height: 30px;
+		color: #666464;
+		padding-left: 70px;
+	}
+	.text-text1{
+		text-align: left;
+		font-size: 15px;
+		line-height: 30px;
+		padding-top: 50px;
+		color: #666464;
+		padding-left: 70px;
+	}
+</style>

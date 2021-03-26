@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<script src="layui/layui.all.js"></script>
+		<link rel="stylesheet" href="layui/css/layui.css">
+		<link rel="stylesheet" href="css/public.css">
+		<title></title>
+	</head>
+	<body>
+		<div class="content">
+			<div class="top-head flex">
+				<img class="top-img" src="img/img01.png" />
+				<div class="flex top-nav">
+					<div class="nav-name"><a href="index.html">App下载</a></div>
+					<div class="nav-name"><a href="elephant.html">吉象多多</a></div>
+					<div class="nav-name this-item">App下载</div>
+					<div class="nav-name"><a href="cooperation.html">商务合作</a></div>
+				</div>
+			</div>
+			<div class="layui-carousel" id="carou">
+			  <div carousel-item="">
+			    <div><img class="image" src="img/img23.png"></div>
+			  </div>
+			</div>
+			<div class="tpl-list">
+				<div class="tpl-name">App下载</div>
+				<div class="tip"></div>
+				<div class="text">为您提供最优质的亲子娱教平台， 人气场馆、 特价门票、民宿酒店等，欢迎下载~</div>
+				<img class="img-tpl" src="img/img17.png" />
+			</div>
+			<div class="tpl-list">
+			   <div class="tpl-box">
+				   <div class="tpl-title">首页</div>
+				   <div class="tpl-tip"></div>
+					<div class="tpl-text">亲子年票APP主要功能页面</div>
+			   </div>
+			   <div class="blue-box">
+				   <div class="blue-text">1 / 一键切换各大城市, 畅玩全国</div>
+				   <div class="blue-text">2 / 快速登录, 无需注册, 安全便捷</div>
+				   <div class="blue-text">3 / 各场馆景区优惠门票、特价套票等</div>
+				   <div class="blue-text">4 / 实时查看最新场馆公告</div>
+				   <div class="blue-text">5 / 绑定为电子年票，使用更轻松</div>
+				   <div class="blue-text">6 / 各城市年票景区介绍</div>
+				   <div class="blue-text">7 / 去哪里玩？  想玩什么？ 再不用愁！</div>
+			   </div>
+			   <img class="phone" src="img/img14.png">
+			</div>
+			<div class="tpl-list">
+			   <div class="tpl-box1">
+				   <div class="tpl-title">场馆</div>
+				   <div class="tpl-tip"></div>
+					<div class="tpl-text">了解场馆详细情况</div>
+			   </div>
+			   <div class="blue-box1">
+				   <div class="blue-text">1 / 可切换城市，查看各城市场馆</div>
+				   <div class="blue-text">2 / 展示部分场馆名单点击可查看场馆信息</div>
+				   <div class="blue-text">3 / 查看年票所有场馆信息</div>
+				   <div class="blue-text">4 / 一键导航至场馆</div>
+				   <div class="blue-text">5 / 一键电话咨询</div>
+			   </div>
+			   <img class="phone1" src="img/img14.png">
+			</div>
+			<div class="tpl-list">
+			   <div class="tpl-box">
+				   <div class="tpl-title">验票</div>
+				   <div class="tpl-tip"></div>
+					<div class="tpl-text">绑定后验证简单顺畅</div>
+			   </div>
+			   <div class="blue-box">1 / 点击可随时联系在线客服
+				   <div class="blue-text">1 / 点击可随时联系在线客服</div>
+				   <div class="blue-text">2 / 拍照上传正面清晰头像可认清本人</div>
+				   <div class="blue-text">3 / 多张年票点击箭头可进行切换本页面不可截屏或打印使用</div>
+				   <div class="blue-text">4 / 每个APP账号最多可绑定4张年票</div>
+			   </div>
+			   <img class="phone" src="img/img14.png">
+			</div>
+			<div class="blue">
+				<img class="code" src="img/img13.png">
+			</div>
+		</div>
+		<script type="text/javascript" src="./js/jquery.js"></script>
+		<script>
+			//一般直接写在一个js文件中
+			layui.use(['carousel'], function() {
+				 var carousel = layui.carousel
+				  ,form = layui.form;
+				  //图片轮播
+				  carousel.render({
+				    elem: '#carou'
+				    ,width: '100%'
+				    ,height: '500px'
+				    ,interval: 5000
+				  });
+				  $(".addr").click(function(){
+				      $('.this-addr').remove();
+					  $(this).append('<div class="this-addr"></div>')
+				  });
+			});
+			
+		</script>
+	</body>
+</html>
+<style scoped="scoped">
+.content{
+	width: 100%;
+	min-width: 1200px;
+	background-color: #FFFFFF;
+	font-size: 18px;
+}
+.image{
+	 width: 100%;
+	 height: 100%;
+ }
+.top-head{
+	padding: 18px 15%;
+}
+.top-img{
+	width: 180px;
+	height: 50px;
+}
+.nav-name{
+	padding: 5px 30px;
+}
+.this-item{
+	border: 1px solid #FFD900;
+	border-radius: 20px;
+	color: #FFD900;
+}
+.tpl-list{
+	width: 100%;
+	margin: 120px 0px;
+	text-align: center;
+	position: relative;
+}
+.phone{
+	position: absolute;
+	width: 320px;
+	height: 650px;
+	top: 0px;
+	left: 20%;
+}
+.phone1{
+	position: absolute;
+	width: 320px;
+	height: 650px;
+	top: 0px;
+	right: 20%;
+}
+.tpl-name{
+	text-align: center;
+	font-size: 30px;
+}
+.tip{
+	margin: 0px auto;
+	width: 35px;
+	height: 3px;
+	background-color: #FFDB0D;
+	margin-top: 25px;
+}
+.text{
+	font-size: 18px;
+	color: #6D6B6B;
+	margin-top: 25px;
+}
+.img-tpl{
+	margin: 50px 0px;
+	width: 550px;
+	height: 230px;
+}
+.tpl-box{
+	text-align: left;
+	padding-left: 50%;
+}
+.tpl-box1{
+	text-align: left;
+	padding-left: 25%;
+}
+.tpl-title{
+	color: #65AADD;
+	font-size: 35px;
+}
+.tpl-tip{
+	margin: 15px 0px;
+	width: 40px;
+	height: 2px;
+	background-color: #65AADD;
+}
+.blue-box{
+	margin-top: 30px;
+	text-align: left;
+	background-color: #EAF6FD;
+	color: #171919;
+	font-size: 15px;
+	line-height: 30px;
+	padding: 100px 0px 100px 50%;
+	margin-bottom: 250px;
+}
+.blue-box1{
+	margin-top: 30px;
+	text-align: left;
+	background-color: #EAF6FD;
+	color: #171919;
+	font-size: 15px;
+	line-height: 30px;
+	padding: 100px 0px 100px 25%;
+	margin-bottom: 250px;
+}
+.blue{
+	background-color: #EAF6FD;
+	padding: 50px 0px;
+	text-align: center;
+}
+.code{
+	width: 200px;
+	height: 220px;
+}
+</style>
